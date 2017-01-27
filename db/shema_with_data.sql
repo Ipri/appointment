@@ -250,15 +250,15 @@ CREATE TABLE `vt_employess_info` (
 DELIMITER //
 CREATE DEFINER=`med`@`localhost` PROCEDURE `add_appointments`(IN `employee_id` INT, IN `date` DATE, IN `time_interval_id` INT, IN `client_id` INT)
 BEGIN
-	INSERT INTO `medical_db`.`appointments` (`employee_id`, `date`, `time_interval_id`, `client_id`) VALUES (employee_id, date, time_interval_id, client_id);
-	UPDATE `medical_db`.`employment` SET  `availability_id` = 2 WHERE `employment`.employees_id = employee_id AND `employment`.date = date AND `employment`.time_interval_id = time_interval_id;
+	INSERT INTO `appointments` (`employee_id`, `date`, `time_interval_id`, `client_id`) VALUES (employee_id, date, time_interval_id, client_id);
+	UPDATE `employment` SET  `availability_id` = 2 WHERE `employment`.employees_id = employee_id AND `employment`.date = date AND `employment`.time_interval_id = time_interval_id;
 END//
 DELIMITER ;
 
 
 -- Дамп структуры для процедура medical_db.search_client
 DELIMITER //
-CREATE DEFINER=`root`@`%` PROCEDURE `search_client`(IN `name` VARCHAR(50), IN `lastname` VARCHAR(50))
+CREATE DEFINER=`med`@`localhost` PROCEDURE `search_client`(IN `name` VARCHAR(50), IN `lastname` VARCHAR(50))
 BEGIN
 	SELECT rt_clients.id FROM rt_clients WHERE rt_clients.name = name AND rt_clients.lastname = lastname;
 END//
