@@ -6,7 +6,7 @@
 	<title>Запись на приём</title>
         <link href="<?=$base_url?>public/css/appointment.css" rel="stylesheet" type="text/css"/>
         <link href="<?=$base_url?>public/css/pikaday.css" rel="stylesheet" type="text/css"/>
-        <script defer src="<?=$base_url?>public/js/vue.js" type="text/javascript"></script>
+        <script defer src="<?=$base_url?>public/js/vue.min.js" type="text/javascript"></script>
         <script defer src="<?=$base_url?>public/js/moment.min.js" type="text/javascript"></script>
         <script defer src="<?=$base_url?>public/js/pikaday.js" type="text/javascript"></script>
         <script defer src="<?=$base_url?>public/js/appointment.js" type="text/javascript"></script>
